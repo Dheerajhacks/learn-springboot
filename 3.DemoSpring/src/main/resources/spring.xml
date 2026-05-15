@@ -1,0 +1,14 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+
+    <bean id="dev" class="com.telusko.Dev" autowire="byType">
+<!--        <property name="comp" ref="comp" />-->
+    </bean>
+    <bean id="comp" class="com.telusko.Laptop" primary="true"></bean>
+    <bean id="comp1" class="com.telusko.Desktop" />
+</beans>
