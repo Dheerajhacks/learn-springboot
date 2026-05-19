@@ -23,6 +23,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
   const fetchData = async (value) => {
     try {
       const response = await axios.get("http://localhost:8080/api/products");
+      console.log(response)
       setSearchResults(response.data);
       console.log(response.data);
     } catch (error) {
