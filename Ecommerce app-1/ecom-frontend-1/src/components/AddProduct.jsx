@@ -32,7 +32,9 @@ const AddProduct = () => {
       "product",
       new Blob([JSON.stringify(product)], { type: "application/json" })
     );
-
+    for (let [key, value] of formData.entries()) {
+      console.log(key, value);
+    }
     axios
       .post("http://localhost:8080/api/product", formData, {
         headers: {
@@ -158,8 +160,6 @@ const AddProduct = () => {
             id="releaseDate"
           />
         </div>
-        {/* <input className='image-control' type="file" name='file' onChange={(e) => setProduct({...product, image: e.target.files[0]})} />
-    <button className="btn btn-primary" >Add Photo</button>  */}
         <div className="col-md-4">
           <label className="form-label">
             <h6>Image</h6>
@@ -189,7 +189,6 @@ const AddProduct = () => {
           <button
             type="submit"
             className="btn btn-primary"
-            // onClick={submitHandler}
           >
             Submit
           </button>
